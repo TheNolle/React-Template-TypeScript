@@ -1,6 +1,6 @@
 {
-  "name": "reactjs-template",
-  "description": "Tired of creating a new ReactJS project from scratch? Even worse by using create-react-app? Well, this is the TypeScript template for you!",
+  "name": "reactjs-template-lightweight",
+  "description": "Tired of creating a new ReactJS project from scratch? Even worse by using create-react-app? Well, this is the lightweight TypeScript template for you!",
   "license": "MIT",
   "version": "1.0.0",
   "author": "Nolly",
