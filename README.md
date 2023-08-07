@@ -2,6 +2,13 @@
 
 # ReactJS TypeScript App Template
 
+---
+
+#### Want the full version ?
+[Click here to get it!](https://github.com/thenolle/reactts-template/tree/lightweight)
+
+---
+
 #### What is this ReactJS TypeScript Template?
 
 Tired of creating a new ReactJS project from scratch? Even worse by using create-react-app? Well, this is the TypeScript template for you! This template is a basic one using TypeScript, Babel, Webpack, React, React Dom, React Router Dom, SCSS, etc. I don't provide custom things, just a base TypeScript template to replace create react app and to help react developers to use the latest packages.
