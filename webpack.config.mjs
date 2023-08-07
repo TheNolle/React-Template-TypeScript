@@ -1,8 +1,8 @@
-import path from 'path'
+import path, { dirname } from 'path'
 import { fileURLToPath } from 'url'
-import { dirname } from 'path'
 
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import CopyWebpackPlugin from 'copy-webpack-plugin'
 
 
 const __filename = fileURLToPath(import.meta.url)
@@ -13,7 +13,8 @@ export const entry = './src/index.tsx'
 export const module = {
     rules: [
         { test: /\.(t|j)sx?$/, exclude: /(node_modules|bower_components)/, use: { loader: 'babel-loader', options: { presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'] } } },
-        { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
+        { test: /\.(sa|sc|c)ss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
+        { test: /\.(png|jpe?g|gif)$/i, use: [{ loader: 'file-loader' }] },
     ],
 }
 
@@ -29,7 +30,7 @@ export const output = {
 export const devServer = {
     static: path.join(__dirname, 'dist'),
     compress: true,
-    port: 3001,
+    port: 3000,
     historyApiFallback: true,
 }
 
@@ -37,6 +38,9 @@ export const plugins = [
     new HtmlWebpackPlugin({
         template: './public/index.html',
         favicon: './public/favicon.ico',
+    }),
+    new CopyWebpackPlugin({
+        patterns: [{ from: 'public', to: '', globOptions: { ignore: ['**/index.html'] } }],
     }),
 ]
 
